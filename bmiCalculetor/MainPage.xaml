@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="bmiCalculetor.MainPage">
+    <StackLayout>
+        <Label Text="BMI Calculator" FontSize="Large" HorizontalOptions="Center" FontAttributes="Bold" />
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="female mode:    "/>
+            <Switch></Switch>
+        </HorizontalStackLayout>
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="height (cm):  "  />
+            <Label Text="{Binding Source={x:Reference HeightSlider}, Path=Value} " />
+        </HorizontalStackLayout>
+                <Slider x:Name="HeightSlider" Margin="50" Maximum="250" Minimum="120" Value="170" />
+        <HorizontalStackLayout HorizontalOptions="Center">
+            <Label Text="weight (kg):  "  />
+            <Label Text="{Binding Source={x:Reference WeightStepper}, Path=Value} " />
+        </HorizontalStackLayout>
+        <Stepper x:Name="WeightStepper" HorizontalOptions="Center" Maximum="200" Minimum="40" Value="70" />
+
+        <Label x:Name="calculation" HorizontalOptions="Center" />
+        <Button Clicked="Button_Clicked" HorizontalOptions="Center" Text="calculate"></Button>
+    </StackLayout>
+
+
+
+</ContentPage>
